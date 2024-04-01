@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  font-size: 25px;
+  font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  color: #E85A4F;
+  background-color: #EAE7DC;
+}

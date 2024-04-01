@@ -1,0 +1,11 @@
+
+
+/api/restaurants GET
+
+/api/restaurants/:id GET
+
+/api/restaurants/add POST
+
+/api/restaurants/menus/:id GET
+
+/api/restaurants/menus/add POST

@@ -1,0 +1,26 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    font-size: 20px;
+    font-weight: normal;
+
+}
+
+input {
+    width:400px;
+    height:25px;
+    margin-top: None;
+}
+.forgot-password-link {
+    color:blue;
+    font-size: smaller;
+    font-weight: bold;
+}
+
+input[type=submit] {
+    margin-top:10px;
+    width:100px;
+    height:30px;
+}

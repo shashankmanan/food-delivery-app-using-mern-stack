@@ -1,0 +1,42 @@
+.NavBar {
+    /* background-color: #90C5A9; */
+
+    font-size: 20px;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+input[type=search] {
+    height:30px;
+    width:500px;
+    border-radius: 10px;
+}
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ul {
+    list-style-type: None;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+li {
+}
+
+a {
+    text-decoration : None;
+    /* color:#05386B */
+    color:black
+}
+.authenticate {
+    justify-self: flex-end;
+}
+.logo {
+    height: 60px;
+    width:200px;
+    margin: 10px;
+}
