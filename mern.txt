@@ -1,0 +1,6 @@
+// modify cart fucntions
+
+=> use ids for cart
+
+Initialise menus with an empty array
+add individual items to the array in menus

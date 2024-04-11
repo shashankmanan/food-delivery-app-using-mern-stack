@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom"
 
 export default function RestaurantList() {
 	const [allRestaurantList , setAllRestaurantList] = useState([])
+	const [errorMessage , setErrorMessage] = useState("")
 	const {resId} = useParams()
 	console.log(`id is : ${resId}`)
 	useEffect(
@@ -22,15 +23,22 @@ export default function RestaurantList() {
 			const tempRestList = await getAllRestaurants()
 			if(tempRestList.status == 200) {
 				setAllRestaurantList(tempRestList.data)
+				setErrorMessage("")
 			}
 			else {
 				console.log("Something went wrong... " , tempRestList.error)
+				setErrorMessage("something went wrong....")
 			}
 		}
 	}
 	return (
 		<div>
-			{allRestaurantList.map( (item) => <RestaurantCard restaurant = {item}/>)}
+			{
+			allRestaurantList.map( 
+				(item) => <RestaurantCard restaurant = {item}/>
+			) 
+			}
+			<h2>{errorMessage}</h2>
 		</div>
 	)
 }

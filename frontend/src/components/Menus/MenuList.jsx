@@ -4,6 +4,7 @@ import DashBoard from "../Cart/DashBoard"
 import {useState,useEffect} from "react"
 import {useParams} from "react-router-dom"
 import { getMenuFromRestaurant } from "../../API/MenuApi"
+import { showCart } from "../Cart/cartOperations"
 
 export default function MenuList() {
     const [totalItems,setTotalItems] = useState(0)
@@ -14,7 +15,7 @@ export default function MenuList() {
 
     useEffect(
         () => {
-            triggerAPI()
+            triggerAPI() 
         } , []
     )
 
@@ -23,27 +24,32 @@ export default function MenuList() {
         setMenu(menuItem.data.menu)
         setRestName(menuItem.data.name)
     }
-    const updateCart = () => {
-        console.log("this is update card")
-        setTotalItems("")
-        let price = 0
-        setTotalPrice(price)
+
+    const updateItemsQuantFromCart = (item) => {
+        const Cart = showCart()
+        const itemExistingInCart = Cart.find( (i) => i.name == item.name)
+        console.log(itemExistingInCart)
+        if(itemExistingInCart)
+            return itemExistingInCart.quantity
+        return 0
     }
+
     return (
         <div>
             <h1>VIEWING FOODS IN {restName}</h1>
             <DashBoard itemsCount = {totalItems} price={totalPrice} checkout={false}/>
-            {
-            
+            {     
                 menu.map((item) => {
+                    const quant = updateItemsQuantFromCart(item)
+                    console.log(quant)
                     return (
                         <>
-                            <MenuCard item = {item} updateCart = {updateCart}/>              
+                            <MenuCard item = {item} quantity = {quant}/>              
                         </>
                         
                     )
                 })
-            }
+            }   
 
          </div>
     )

@@ -15,6 +15,6 @@ restaurantRouter.get("/:id/" , getRestaurant)
 
 // /api/restaurants/add POST
 // adds new restaurant data sent via request body
-restaurantRouter.post("/add/", createNewRestaurant)
+restaurantRouter.post("/create/", createNewRestaurant)
 
 module.exports = restaurantRouter

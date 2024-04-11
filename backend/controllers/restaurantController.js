@@ -16,6 +16,7 @@ const getRestaurant = (request,response) => {
         response.status(404).json({"NO ITEM FOUND" : ""})
 }
 
+// request.body => { name, location , speciality}
 const createNewRestaurant = async (request,response) => {
     const generateRandomID = (name,location) => {
         console.log(name,location)

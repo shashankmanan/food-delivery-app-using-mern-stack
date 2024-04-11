@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose")
 
 const menusSchema = new mongoose.Schema({
@@ -10,7 +11,7 @@ const menusSchema = new mongoose.Schema({
             required : true
         } ,
         "menu" : {
-            type : [] ,
+            type :  [],
             default  : []
         }
 })
